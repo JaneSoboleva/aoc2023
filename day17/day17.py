@@ -47,7 +47,8 @@ def attempt_movement(item, direction, phase):
             break  # in phase 1 we need to run this only once, since we can make turns at any point
         if phase == 2 and new_item[3] >= 4:
             break  # in phase 2 we should move for at least 4 blocks straight before accounting for a new minimum
-            # and it's important to not update minimums on the previous 3 blocks, otherwise it's not different from being able to make a turn early, which leads to a wrong answer
+            # and it's important to not update minimums on the previous 3 blocks
+            # otherwise it's not different from being able to make a turn early, which leads to a wrong answer
     if inbounds(new_item):
         if get_minimum(new_item) > new_minimum:
             update_minimum(new_item, new_minimum)
